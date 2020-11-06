@@ -1,0 +1,528 @@
+{
+  "config": {
+    "homepage": "https://rselle.com",
+    "theme": {
+      "value": "panther",
+      "render": true,
+      "meta": {
+        "showPageNumbers": true,
+        "hideSectionLines": false,
+        "pantherHeaderNameFontSize": 60,
+        "pantherHeaderColumnOneWidth": 0.6,
+        "pantherHeaderColumnTwoWidth": 0.4
+      }
+    },
+    "analytics": { "ga": { "trackingId": "UA-37418034-1", "enable": true } },
+    "meta": { "hideFooterCredit": true }
+  },
+  "basics": {
+    "name": { "value": "Ram Selle", "render": true },
+    "label": { "value": "Senior Software Engineer", "render": false },
+    "image": { "value": "pic.png", "render": true },
+    "email": { "value": "rselle@uwalumni.com", "render": true },
+    "phone": { "value": "+1(111)111-1111", "render": true },
+    "url": {
+      "value": "https://github.com/acrlakshman/profileio",
+      "render": true
+    },
+    "summary": {
+      "label": "Summary",
+      "value": "Space to summarize the work I have been doing and the focus of my work.",
+      "render": true
+    },
+    "location": {
+      "value": {
+        "address": "XXXX University Avenue",
+        "postalCode": "WI 537XX",
+        "city": "Madison",
+        "countryName": "USA",
+        "region": "Wisconsin"
+      },
+      "render": false
+    },
+    "profiles": [
+      {
+        "value": {
+          "network": "googlescholar",
+          "url": "https://scholar.google.com/citations?user=VcGv5cEAAAAJ&hl=en"
+        },
+        "render": true
+      },
+      {
+        "value": { "network": "github", "username": "acrlakshman" },
+        "render": true
+      },
+      {
+        "value": {
+          "network": "linkedin",
+          "url": "https://www.linkedin.com/in/lakshmananumolu/"
+        },
+        "render": true
+      },
+      {
+        "value": {
+          "network": "twitter",
+          "username": "acrlakshman",
+          "url": "https://twitter.com/acrlakshman"
+        },
+        "render": true
+      },
+      {
+        "value": {
+          "network": "vimeo",
+          "url": "https://vimeo.com/user24179204"
+        },
+        "render": false
+      }
+    ]
+  },
+  "work": {
+    "label": "Work & Experience",
+    "rank": 1,
+    "list": [
+      {
+        "value": {
+          "name": "DreamWorks Animation",
+          "location": "Glendale CA",
+          "brief": "",
+          "position": "Senior Software Engineer",
+          "url": "https://company.com",
+          "startDate": "2019",
+          "endDate": "Present",
+          "active": true,
+          "highlights": [
+            {
+              "brief": "",
+              "detail": "I did this and it has so and so impact"
+            },
+            {
+              "brief": "",
+              "detail": "I did this and it has so and so impact"
+            },
+            {
+              "brief": "",
+              "detail": "I did this and it has so and so impact"
+            }
+          ]
+        },
+        "render": true
+      },
+      {
+        "value": {
+          "name": "Company Name",
+          "location": "Sunnyvale CA",
+          "brief": "",
+          "position": "Software Engineer",
+          "url": "https://company.com",
+          "startDate": "2017",
+          "endDate": "2019",
+          "active": true,
+          "highlights": [
+            {
+              "brief": "",
+              "detail": "I did this and it has so and so impact"
+            },
+            {
+              "brief": "",
+              "detail": "I did this and it has so and so impact"
+            },
+            {
+              "brief": "",
+              "detail": "I did this and it has so and so impact"
+            },
+            {
+              "brief": "",
+              "detail": "I did this and it has so and so impact"
+            }
+          ]
+        },
+        "render": true
+      }
+    ]
+  },
+  "education": {
+    "label": "Education",
+    "rank": 2,
+    "list": [
+      {
+        "value": {
+          "institution": "Carnegie Mellon University",
+          "url": "https://cmu.edu",
+          "major": "Computer Science",
+          "minor": "",
+          "degree": "Ph.D.",
+          "endDate": ""
+        },
+        "render": true
+      },
+      {
+        "value": {
+          "institution": "University of Wisconsin-Madison",
+          "url": "https://wisc.edu",
+          "major": "Physics",
+          "minor": "",
+          "degree": "BS",
+          "endDate": ""
+        },
+        "render": true
+      }
+    ]
+  },
+  "projects": {
+    "label": "Recent Projects",
+    "rank": 4,
+    "list": [
+      {
+        "value": {
+          "name": "ProfileIO",
+          "description": "Delightfully simple website and resume generator for students, researchers, and engineers",
+          "team": "Lakshman Anumolu",
+          "thumbnail": "profileio.png",
+          "highlights": [
+            {
+              "brief": "",
+              "detail": "Delightfully simple website and resume generator for students, researchers, and engineers"
+            },
+            {
+              "brief": "",
+              "detail": "Generate website and resume via github actions. MacOS dedicated fonts are made possible to use via actions"
+            }
+          ],
+          "keywords": ["resume", "website", "YAML", "markdown"],
+          "startDate": "2020",
+          "endDate": "",
+          "url": "https://github.com/acrlakshman/profileio",
+          "roles": ["Architect", "Developer"],
+          "type": "application",
+          "webPage": { "slug": "profileio", "detail": "" }
+        },
+        "render": true
+      },
+      {
+        "value": {
+          "name": "Templates to render CFD results photorealistically",
+          "description": "Scene templates to kick-start scalable rendering of CFD results photorealistically.",
+          "team": "Lakshman Anumolu",
+          "note": "",
+          "thumbnail": "scene_templates.png",
+          "highlights": [
+            {
+              "brief": "",
+              "detail": "Scene templates to kick-start scalable rendering of CFD results photorealistically"
+            },
+            {
+              "brief": "",
+              "detail": "Comes with cross platform containerized tool kit"
+            }
+          ],
+          "keywords": ["CFD", "photorealistic", "mitsuba"],
+          "startDate": "2020",
+          "endDate": "",
+          "url": "https://github.com/acrlakshman/scene_templates",
+          "roles": ["Architect", "Developer"],
+          "type": "application"
+        },
+        "render": true
+      }
+    ]
+  },
+  "awards": {
+    "label": "Awards",
+    "rank": 11,
+    "list": [
+      {
+        "value": {
+          "title": "Best Student Project",
+          "date": "2016",
+          "awarder": "SIGGRAPH",
+          "summary": "Framework for artistic rendering"
+        },
+        "render": true
+      }
+    ]
+  },
+  "publications": {
+    "label": "Publications",
+    "rank": 3,
+    "list": [
+      {
+        "value": {
+          "type": "article",
+          "author": "Anumolu, L., Trujillo, M.F.",
+          "title": "Gradient augmented level set method for phase change simulations",
+          "journal": "Journal of Computational Physics",
+          "volume": 353,
+          "year": 2018,
+          "number": 1,
+          "pages": "377-406",
+          "thumbnail": "gals_phase_change.png",
+          "url": "https://www.sciencedirect.com/science/article/pii/S0021999117307696"
+        },
+        "render": true
+      },
+      {
+        "value": {
+          "type": "book",
+          "author": "Trujillo, M.F., Anumolu, L., Ryddner, D.",
+          "title": "Direct Numerical Simulations for Two-Phase Flows with Phase Change",
+          "series": "Encyclopedia of Two-Phase Heat Transfer and Flow",
+          "volume": 3,
+          "publisher": "World Scientific",
+          "address": "",
+          "year": 2018,
+          "thumbnail": "dns_phasechange.png",
+          "url": "https://www.worldscientific.com/doi/abs/10.1142/9789813229440_0008"
+        },
+        "render": true
+      },
+      {
+        "value": {
+          "type": "article",
+          "author": "Trujillo, M.F., Anumolu, L., Ryddner, D.",
+          "title": "The distortion of the level set gradient under advection",
+          "journal": "Journal of Computational Physics",
+          "volume": 334,
+          "year": 2017,
+          "number": 0,
+          "pages": "81-101",
+          "thumbnail": "levelset_deformation.png",
+          "url": "https://www.sciencedirect.com/science/article/pii/S0021999116307045"
+        },
+        "render": true
+      },
+      {
+        "value": {
+          "type": "article",
+          "author": "Lewis, S.R., Trujillo, M.F., Anumolu, L.",
+          "title": "Numerical Simulation of Droplet Train and Free Surface Jet Impingement",
+          "journal": "International Journal of Heat and Fluid Flow",
+          "volume": 44,
+          "year": 2013,
+          "number": 0,
+          "pages": "610-623",
+          "thumbnail": "jet_paper.jpg",
+          "url": "https://www.sciencedirect.com/science/article/pii/S0142727X13001707"
+        },
+        "render": true
+      },
+      {
+        "value": {
+          "type": "article",
+          "author": "Anumolu, L., Trujillo, M.F.",
+          "title": "Gradient Augmented Reinitialization Scheme for the Level Set Method",
+          "journal": "International Journal of Numerical Methods in Fluids",
+          "volume": 73,
+          "year": 2013,
+          "number": 12,
+          "pages": "1011-1041",
+          "thumbnail": "gals_reinit.jpg",
+          "url": "http://onlinelibrary.wiley.com/doi/10.1002/fld.3834/abstract"
+        },
+        "render": true
+      },
+      {
+        "value": {
+          "type": "article",
+          "author": "Deshpande, S.S., Anumolu, L., Trujillo, M.F.",
+          "title": "Evaluating the performance of the two-phase flow solver interFoam",
+          "journal": "Computational Science & Discovery",
+          "volume": 5,
+          "year": 2012,
+          "number": 0,
+          "pages": "014016:1-36",
+          "thumbnail": "interfoam_thumbnail.png",
+          "url": "http://iopscience.iop.org/1749-4699/5/1/014016"
+        },
+        "render": true
+      }
+    ]
+  },
+  "gallery": {
+    "label": "Gallery",
+    "rank": 5,
+    "list": [
+      {
+        "value": {
+          "type": "image",
+          "src": "pic.png",
+          "caption": {
+            "title": "Basic Model Viewer",
+            "description": "A project"
+          }
+        },
+        "render": false
+      },
+      {
+        "value": {
+          "type": "video",
+          "platform": "youtube",
+          "videoId": "Wsije1KetVw"
+        },
+        "render": false
+      },
+      {
+        "value": {
+          "type": "video",
+          "platform": "youtube",
+          "videoId": "Wsije1KetVw"
+        },
+        "render": false
+      },
+      {
+        "value": {
+          "type": "video",
+          "platform": "youtube",
+          "videoId": "Wsije1KetVw"
+        },
+        "render": false
+      },
+      {
+        "value": {
+          "type": "video",
+          "platform": "vimeo",
+          "videoId": "459803240"
+        },
+        "render": false
+      }
+    ]
+  },
+  "skills": {
+    "label": "Skills",
+    "rank": 7,
+    "list": [
+      {
+        "value": {
+          "name": "Programming Languages",
+          "level": "Fluent",
+          "keywords": ["C++", "Go", "Python"]
+        },
+        "render": true
+      },
+      {
+        "value": {
+          "name": "Tools",
+          "level": "Experienced",
+          "keywords": ["CMake", "gdb", "valgrind", "git"]
+        },
+        "render": true
+      },
+      {
+        "value": {
+          "name": "Environments",
+          "level": "Experienced",
+          "keywords": ["Linux", "MacOS", "Windows"]
+        },
+        "render": true
+      }
+    ]
+  },
+  "languages": {
+    "label": "Languages",
+    "rank": 17,
+    "list": [
+      {
+        "value": {
+          "language": "English",
+          "fluency": "Fluent"
+        },
+        "render": true
+      },
+      {
+        "value": {
+          "language": "Spannish",
+          "fluency": "Beginner"
+        },
+        "render": true
+      }
+    ]
+  },
+  "interests": {
+    "label": "Interests",
+    "rank": 18,
+    "list": [
+      {
+        "value": {
+          "name": "Sports",
+          "keywords": ["Baseball", "Tennis"]
+        },
+        "render": true
+      },
+      {
+        "value": {
+          "name": "Social",
+          "keywords": ["Community service", "Camping", "Fishing"]
+        },
+        "render": true
+      }
+    ]
+  },
+  "references": {
+    "label": "References",
+    "rank": 9,
+    "list": [
+      {
+        "value": {
+          "name": "Jean Nave",
+          "title": "Prof.",
+          "affiliation": "MIT",
+          "address": "XX  Massachusetts Ave.",
+          "postalCode": "MA XXXX",
+          "city": "Cambridge",
+          "countryName": "USA",
+          "region": "Massachusetts",
+          "phoneNumber": "+1(XXX)XXX-XXXX",
+          "email": "user@mit.edu"
+        },
+        "render": true
+      }
+    ]
+  },
+  "custom": [
+    {
+      "rank": 6,
+      "label": "Patents",
+      "type": "list",
+      "list": [
+        {
+          "value": {
+            "brief": "",
+            "detail": "Physics based simulations: Level set method for artistic simulations (9999999999)"
+          },
+          "render": true
+        },
+        {
+          "value": {
+            "brief": "",
+            "detail": "Computer Graphics: Realistic rendering of glossy surfaces (9999999999)"
+          },
+          "render": true
+        }
+      ],
+      "meta": {
+        "listStyleType": "none"
+      }
+    },
+    {
+      "rank": 6,
+      "label": "Conference Presentations",
+      "type": "publications",
+      "publications": [
+        {
+          "value": {
+            "type": "article",
+            "author": "Osher, T.",
+            "title": "Phase field method for simulation",
+            "journal": "SIGGRAPH",
+            "volume": 0,
+            "year": 2017,
+            "thumbnail": "gals_phase_change.png"
+          },
+          "render": true
+        }
+      ],
+      "meta": {
+        "listStyleType": "none"
+      }
+    }
+  ]
+}
