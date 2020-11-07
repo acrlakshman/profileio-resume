@@ -22,12 +22,12 @@ func ProfileIO(jsonData []byte) {
 
 	var templateName string
 
-	if profile.Config.Theme.Value == profileThemes[BasicTheme] {
-		templateName = profileThemes[BasicTheme] + ".tmpl"
-	} else if profile.Config.Theme.Value == profileThemes[PantherTheme] {
-		templateName = profileThemes[PantherTheme] + ".tmpl"
+	if profile.Config.Theme.Value == ProfileThemes[BasicTheme] {
+		templateName = ProfileThemes[BasicTheme] + ".tmpl"
+	} else if profile.Config.Theme.Value == ProfileThemes[PantherTheme] {
+		templateName = ProfileThemes[PantherTheme] + ".tmpl"
 	} else {
-		templateName = profileThemes[BasicTheme] + ".tmpl"
+		templateName = ProfileThemes[BasicTheme] + ".tmpl"
 	}
 
 	templateFile := "./" + templateName

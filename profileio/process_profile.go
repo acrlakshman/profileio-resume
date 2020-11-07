@@ -11,60 +11,60 @@ import (
 // PopulateProfile maps json data to profile struct.
 func PopulateProfile(jsonData *[]byte, profile *Profile) {
 	// Config
-	config, _, _, _ := jsonparser.Get(*jsonData, profileFieldNameMap[ConfigField])
+	config, _, _, _ := jsonparser.Get(*jsonData, ProfileFieldNameMap[ConfigField])
 	json.Unmarshal(config, &profile.Config)
 
 	// Basics
-	basics, _, _, _ := jsonparser.Get(*jsonData, profileFieldNameMap[BasicsField])
+	basics, _, _, _ := jsonparser.Get(*jsonData, ProfileFieldNameMap[BasicsField])
 	json.Unmarshal(basics, &profile.Basics)
 
 	// Work
-	work, _, _, _ := jsonparser.Get(*jsonData, profileFieldNameMap[WorkField])
+	work, _, _, _ := jsonparser.Get(*jsonData, ProfileFieldNameMap[WorkField])
 	json.Unmarshal(work, &profile.Work)
 
 	// Education
-	education, _, _, _ := jsonparser.Get(*jsonData, profileFieldNameMap[EducationField])
+	education, _, _, _ := jsonparser.Get(*jsonData, ProfileFieldNameMap[EducationField])
 	json.Unmarshal(education, &profile.Education)
 
 	// Projects
-	projects, _, _, _ := jsonparser.Get(*jsonData, profileFieldNameMap[ProjectsField])
+	projects, _, _, _ := jsonparser.Get(*jsonData, ProfileFieldNameMap[ProjectsField])
 	json.Unmarshal(projects, &profile.Projects)
 
 	// Awards
-	awards, _, _, _ := jsonparser.Get(*jsonData, profileFieldNameMap[AwardsField])
+	awards, _, _, _ := jsonparser.Get(*jsonData, ProfileFieldNameMap[AwardsField])
 	json.Unmarshal(awards, &profile.Awards)
 
 	// Publications
-	publications, _, _, _ := jsonparser.Get(*jsonData, profileFieldNameMap[PublicationsField])
+	publications, _, _, _ := jsonparser.Get(*jsonData, ProfileFieldNameMap[PublicationsField])
 	json.Unmarshal(publications, &profile.Publications)
 
 	// Skills
-	skills, _, _, _ := jsonparser.Get(*jsonData, profileFieldNameMap[SkillsField])
+	skills, _, _, _ := jsonparser.Get(*jsonData, ProfileFieldNameMap[SkillsField])
 	json.Unmarshal(skills, &profile.Skills)
 
 	// Languages
-	languages, _, _, _ := jsonparser.Get(*jsonData, profileFieldNameMap[LanguagesField])
+	languages, _, _, _ := jsonparser.Get(*jsonData, ProfileFieldNameMap[LanguagesField])
 	json.Unmarshal(languages, &profile.Languages)
 
 	// Interests
-	interests, _, _, _ := jsonparser.Get(*jsonData, profileFieldNameMap[InterestsField])
+	interests, _, _, _ := jsonparser.Get(*jsonData, ProfileFieldNameMap[InterestsField])
 	json.Unmarshal(interests, &profile.Interests)
 
 	// References
-	references, _, _, _ := jsonparser.Get(*jsonData, profileFieldNameMap[ReferencesField])
+	references, _, _, _ := jsonparser.Get(*jsonData, ProfileFieldNameMap[ReferencesField])
 	json.Unmarshal(references, &profile.References)
 
 	// Custom
-	custom, _, _, _ := jsonparser.Get(*jsonData, profileFieldNameMap[CustomField])
+	custom, _, _, _ := jsonparser.Get(*jsonData, ProfileFieldNameMap[CustomField])
 	json.Unmarshal(custom, &profile.Custom)
 }
 
 // preProcessProfile data
 func preProcessProfile(profile *Profile) {
-	if profile.Config.Theme.Value == profileThemes[BasicTheme] {
+	if profile.Config.Theme.Value == ProfileThemes[BasicTheme] {
 		profile.Basics.Summary.Label = SanitizeLabel(profile.Basics.Summary.Label)
 		profile.Basics.Summary.Value = SanitizeText(profile.Basics.Summary.Value)
-	} else if profile.Config.Theme.Value == profileThemes[PantherTheme] {
+	} else if profile.Config.Theme.Value == ProfileThemes[PantherTheme] {
 		profile.Basics.Summary.Label = SanitizeText(profile.Basics.Summary.Label)
 		profile.Basics.Summary.Value = SanitizeText(profile.Basics.Summary.Value)
 		profile.Education.Label = SanitizeText(profile.Education.Label)
@@ -82,10 +82,10 @@ func preProcessProfile(profile *Profile) {
 // parseName func
 func parseName(name string, theme string) string {
 	switch theme {
-	case profileThemes[BasicTheme]:
+	case ProfileThemes[BasicTheme]:
 		return SanitizeLabel(name)
 
-	case profileThemes[PantherTheme]:
+	case ProfileThemes[PantherTheme]:
 		if len(strings.SplitN(name, " ", -1)) == 2 {
 			strs := strings.SplitN(name, " ", -1)
 			return strs[0] + "\\textbf{" + strs[1] + "}"
@@ -141,6 +141,8 @@ func SanitizeText(text string) string {
 	text = strings.Replace(text, "\\", "\\textbackslash ", -1)
 	// Replace & with \\&
 	text = strings.Replace(text, "&", "\\&", -1)
+	// Replace _ with \\_
+	text = strings.Replace(text, "_", "\\_", -1)
 
 	return text
 }
@@ -166,6 +168,7 @@ func SanitizeLabel(label string) string {
 	}
 
 	label = strings.Replace(label, "&", "\\&", -1)
+	label = strings.Replace(label, "_", "\\_", -1)
 
 	return label
 }
@@ -173,10 +176,10 @@ func SanitizeLabel(label string) string {
 // Parse returnes parsed Publication field based on the theme.
 func (item *PublicationDetail) Parse(config Config) string {
 	switch config.Theme.Value {
-	case profileThemes[BasicTheme]:
+	case ProfileThemes[BasicTheme]:
 		return item.ParseBasic(config)
 
-	case profileThemes[PantherTheme]:
+	case ProfileThemes[PantherTheme]:
 		return item.ParsePanther(config)
 
 	default:

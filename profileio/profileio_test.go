@@ -5,6 +5,7 @@ import (
 	"io"
 	"io/ioutil"
 	"os"
+	"runtime"
 	"testing"
 )
 
@@ -73,17 +74,23 @@ func TestProfileIO(t *testing.T) {
 
 	// diff basic.tmpl with ./samples/basic.tmpl
 	if !compare("./basic.tmpl", "./samples/basic.tmpl") {
-		t.Errorf("generated basic template differs from the reference one, either make sure to update the reference template or check the code changes.")
+		t.Errorf("generated template (\"basic\") differs from the reference one, either make sure to update the reference template or check the code changes.")
 	}
 
 	// Test panther template
 	profile.Config.Theme.Value = "panther"
 	templateFile = "./panther.tmpl"
 	generateTemplateForBasicTemplate(&profile, templateFile)
-	defer os.Remove(templateFile)
+   defer os.Remove(templateFile)
 
-	// diff panther.tmpl with ./samples/panther.tmpl
-	if !compare("./panther.tmpl", "./samples/panther.tmpl") {
-		t.Errorf("generated basic template differs from the reference one, either make sure to update the reference template or check the code changes.")
+	// diff panther.tmpl with ./samples/panther(_os).tmpl
+   pantherFileRef := "./samples/panther.tmpl"
+
+	if runtime.GOOS == "darwin" {
+	   pantherFileRef = "./samples/panther_mac.tmpl"
+   }
+
+	if !compare("./panther.tmpl", pantherFileRef) {
+		t.Errorf("generated template (\"panther\") differs from the reference one, either make sure to update the reference template or check the code changes.")
 	}
 }

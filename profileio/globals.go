@@ -2,11 +2,13 @@ package profileio
 
 var resumeRenderPath string = `./resume/`
 
-var profileThemes map[ProfileTheme]string = map[ProfileTheme]string{
+// ProfileThemes is a map of list of available themes.
+var ProfileThemes map[ProfileTheme]string = map[ProfileTheme]string{
 	BasicTheme:   "basic",
 	PantherTheme: "panther"}
 
-var profileFieldNameMap map[ProfileField]string = map[ProfileField]string{
+// ProfileFieldNameMap stores the field names of different sections in a profile, e.g. "config", "basics", etc.
+var ProfileFieldNameMap map[ProfileField]string = map[ProfileField]string{
 	ConfigField:       "config",
 	BasicsField:       "basics",
 	WorkField:         "work",
@@ -21,7 +23,8 @@ var profileFieldNameMap map[ProfileField]string = map[ProfileField]string{
 	ListField:         "list",
 	CustomField:       "custom"}
 
-var publicationFieldNameMap map[PublicationField]string = map[PublicationField]string{
+// PublicationFieldNameMap stores the names of different publication types, "article", "book", etc.
+var PublicationFieldNameMap map[PublicationField]string = map[PublicationField]string{
 	ArticleField:      "article",
 	BookField:         "book",
 	ThesisField:       "thesis",

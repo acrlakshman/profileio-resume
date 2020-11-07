@@ -8,42 +8,42 @@ func GetDefaultRanks(theme string) map[string]int {
 	m := make(map[string]int)
 
 	switch theme {
-	case profileThemes[BasicTheme]:
-		m[profileFieldNameMap[WorkField]] = 1
-		m[profileFieldNameMap[EducationField]] = 2
-		m[profileFieldNameMap[PublicationsField]] = 3
-		m[profileFieldNameMap[ProjectsField]] = 4
-		m[profileFieldNameMap[AwardsField]] = 5
-		m[profileFieldNameMap[SkillsField]] = 6
-		m[profileFieldNameMap[LanguagesField]] = math.MaxInt32
-		m[profileFieldNameMap[InterestsField]] = math.MaxInt32
-		m[profileFieldNameMap[ReferencesField]] = math.MaxInt32
+	case ProfileThemes[BasicTheme]:
+		m[ProfileFieldNameMap[WorkField]] = 1
+		m[ProfileFieldNameMap[EducationField]] = 2
+		m[ProfileFieldNameMap[PublicationsField]] = 3
+		m[ProfileFieldNameMap[ProjectsField]] = 4
+		m[ProfileFieldNameMap[AwardsField]] = 5
+		m[ProfileFieldNameMap[SkillsField]] = 6
+		m[ProfileFieldNameMap[LanguagesField]] = math.MaxInt32
+		m[ProfileFieldNameMap[InterestsField]] = math.MaxInt32
+		m[ProfileFieldNameMap[ReferencesField]] = math.MaxInt32
 
 		return m
 
-	case profileThemes[PantherTheme]:
-		m[profileFieldNameMap[WorkField]] = 1
-		m[profileFieldNameMap[EducationField]] = 2
-		m[profileFieldNameMap[PublicationsField]] = 3
-		m[profileFieldNameMap[ProjectsField]] = 4
-		m[profileFieldNameMap[AwardsField]] = 5
-		m[profileFieldNameMap[SkillsField]] = 6
-		m[profileFieldNameMap[LanguagesField]] = math.MaxInt32
-		m[profileFieldNameMap[InterestsField]] = math.MaxInt32
-		m[profileFieldNameMap[ReferencesField]] = math.MaxInt32
+	case ProfileThemes[PantherTheme]:
+		m[ProfileFieldNameMap[WorkField]] = 1
+		m[ProfileFieldNameMap[EducationField]] = 2
+		m[ProfileFieldNameMap[PublicationsField]] = 3
+		m[ProfileFieldNameMap[ProjectsField]] = 4
+		m[ProfileFieldNameMap[AwardsField]] = 5
+		m[ProfileFieldNameMap[SkillsField]] = 6
+		m[ProfileFieldNameMap[LanguagesField]] = math.MaxInt32
+		m[ProfileFieldNameMap[InterestsField]] = math.MaxInt32
+		m[ProfileFieldNameMap[ReferencesField]] = math.MaxInt32
 
 		return m
 
 	default:
-		m[profileFieldNameMap[WorkField]] = 2
-		m[profileFieldNameMap[EducationField]] = 1
-		m[profileFieldNameMap[PublicationsField]] = 3
-		m[profileFieldNameMap[ProjectsField]] = 4
-		m[profileFieldNameMap[AwardsField]] = 5
-		m[profileFieldNameMap[SkillsField]] = 6
-		m[profileFieldNameMap[LanguagesField]] = math.MaxInt32
-		m[profileFieldNameMap[InterestsField]] = math.MaxInt32
-		m[profileFieldNameMap[ReferencesField]] = math.MaxInt32
+		m[ProfileFieldNameMap[WorkField]] = 2
+		m[ProfileFieldNameMap[EducationField]] = 1
+		m[ProfileFieldNameMap[PublicationsField]] = 3
+		m[ProfileFieldNameMap[ProjectsField]] = 4
+		m[ProfileFieldNameMap[AwardsField]] = 5
+		m[ProfileFieldNameMap[SkillsField]] = 6
+		m[ProfileFieldNameMap[LanguagesField]] = math.MaxInt32
+		m[ProfileFieldNameMap[InterestsField]] = math.MaxInt32
+		m[ProfileFieldNameMap[ReferencesField]] = math.MaxInt32
 
 		return m
 	}

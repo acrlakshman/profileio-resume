@@ -93,34 +93,34 @@ func generateTemplatePanther(profile *Profile, sortedSectionList []SectionIndexR
 
 	for _, data := range sortedSectionList {
 		switch data.name {
-		case profileFieldNameMap[WorkField]:
+		case ProfileFieldNameMap[WorkField]:
 			profile.Work.List.writeTemplatePanther(f)
 
-		case profileFieldNameMap[EducationField]:
+		case ProfileFieldNameMap[EducationField]:
 			profile.Education.List.writeTemplatePanther(f)
 
-		case profileFieldNameMap[PublicationsField]:
+		case ProfileFieldNameMap[PublicationsField]:
 			profile.Publications.List.writeTemplatePanther(f)
 
-		case profileFieldNameMap[ProjectsField]:
+		case ProfileFieldNameMap[ProjectsField]:
 			profile.Projects.List.writeTemplatePanther(f)
 
-		case profileFieldNameMap[AwardsField]:
+		case ProfileFieldNameMap[AwardsField]:
 			profile.Awards.List.writeTemplatePanther(f)
 
-		case profileFieldNameMap[SkillsField]:
+		case ProfileFieldNameMap[SkillsField]:
 			profile.Skills.List.writeTemplatePanther(f)
 
-		case profileFieldNameMap[LanguagesField]:
+		case ProfileFieldNameMap[LanguagesField]:
 			profile.Languages.List.writeTemplatePanther(f)
 
-		case profileFieldNameMap[InterestsField]:
+		case ProfileFieldNameMap[InterestsField]:
 			profile.Interests.List.writeTemplatePanther(f)
 
-		case profileFieldNameMap[ReferencesField]:
+		case ProfileFieldNameMap[ReferencesField]:
 			profile.References.List.writeTemplatePanther(f)
 
-		case profileFieldNameMap[CustomField]:
+		case ProfileFieldNameMap[CustomField]:
 			profile.Custom.writeTemplatePanther(f, data.index)
 
 		default:
@@ -278,7 +278,7 @@ func (s *ReferenceDetailSlice) writeTemplatePanther(f *os.File) {
 
 func (s *CustomSlice) writeTemplatePanther(f *os.File, index int) {
 	switch (*s)[index].Type {
-	case profileFieldNameMap[WorkField]:
+	case ProfileFieldNameMap[WorkField]:
 		f.WriteString(`
 	{{if .Custom}}{{with $customSection := index .Custom ` + strconv.Itoa(index) + `}}{{if HasRender $customSection.Work}}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%% Work/Experience: Custom[` + strconv.Itoa(index) + `] %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -296,7 +296,7 @@ func (s *CustomSlice) writeTemplatePanther(f *os.File, index int) {
 	{{end}}{{end}}{{end}}
 		`)
 
-	case profileFieldNameMap[EducationField]:
+	case ProfileFieldNameMap[EducationField]:
 		f.WriteString(`
 	{{if .Custom}}{{with $customSection := index .Custom ` + strconv.Itoa(index) + `}}{{if HasRender $customSection.Education}}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%% Education: Custom[` + strconv.Itoa(index) + `] %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -308,7 +308,7 @@ func (s *CustomSlice) writeTemplatePanther(f *os.File, index int) {
 	{{end}}{{end}}{{end}}
 		`)
 
-	case profileFieldNameMap[PublicationsField]:
+	case ProfileFieldNameMap[PublicationsField]:
 		f.WriteString(`
 	{{if .Custom}}{{with $customSection := index .Custom ` + strconv.Itoa(index) + `}}{{if HasRender $customSection.Publications}}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%% Publications: Custom[` + strconv.Itoa(index) + `] %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -322,7 +322,7 @@ func (s *CustomSlice) writeTemplatePanther(f *os.File, index int) {
 	{{end}}{{end}}{{end}}
 		`)
 
-	case profileFieldNameMap[ProjectsField]:
+	case ProfileFieldNameMap[ProjectsField]:
 		f.WriteString(`
 	{{if .Custom}}{{with $customSection := index .Custom ` + strconv.Itoa(index) + `}}{{if HasRender $customSection.Projects}}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%% Projects: Custom[` + strconv.Itoa(index) + `] %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -339,7 +339,7 @@ func (s *CustomSlice) writeTemplatePanther(f *os.File, index int) {
 	{{end}}{{end}}{{end}}{{end}}{{end}}{{end}}{{end}}
 		`)
 
-	case profileFieldNameMap[AwardsField]:
+	case ProfileFieldNameMap[AwardsField]:
 		f.WriteString(`
 	{{if .Custom}}{{with $customSection := index .Custom ` + strconv.Itoa(index) + `}}{{if HasRender $customSection.Awards}}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%% Awards: Custom[` + strconv.Itoa(index) + `] %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -353,7 +353,7 @@ func (s *CustomSlice) writeTemplatePanther(f *os.File, index int) {
 	{{end}}{{end}}{{end}}
 		`)
 
-	case profileFieldNameMap[SkillsField]:
+	case ProfileFieldNameMap[SkillsField]:
 		f.WriteString(`
 	{{if .Custom}}{{with $customSection := index .Custom ` + strconv.Itoa(index) + `}}{{if HasRender $customSection.Skills}}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%% Skills: Custom[` + strconv.Itoa(index) + `] %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -367,7 +367,7 @@ func (s *CustomSlice) writeTemplatePanther(f *os.File, index int) {
 	{{end}}{{end}}{{end}}
 		`)
 
-	case profileFieldNameMap[LanguagesField]:
+	case ProfileFieldNameMap[LanguagesField]:
 		f.WriteString(`
 	{{if .Custom}}{{with $customSection := index .Custom ` + strconv.Itoa(index) + `}}{{if HasRender $customSection.Languages}}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%% Languages: Custom[` + strconv.Itoa(index) + `] %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -381,7 +381,7 @@ func (s *CustomSlice) writeTemplatePanther(f *os.File, index int) {
 	{{end}}{{end}}
 		`)
 
-	case profileFieldNameMap[InterestsField]:
+	case ProfileFieldNameMap[InterestsField]:
 		f.WriteString(`
 	{{if .Custom}}{{with $customSection := index .Custom ` + strconv.Itoa(index) + `}}{{if HasRender $customSection.Interests}}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%% Interests: Custom[` + strconv.Itoa(index) + `] %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -394,7 +394,7 @@ func (s *CustomSlice) writeTemplatePanther(f *os.File, index int) {
 	\end{itemize}{{end}}{{end}}{{end}}
 		`)
 
-	case profileFieldNameMap[ReferencesField]:
+	case ProfileFieldNameMap[ReferencesField]:
 		f.WriteString(`
 	{{if .Custom}}{{with $customSection := index .Custom ` + strconv.Itoa(index) + `}}{{if HasRender $customSection.References}}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%% References: Custom[` + strconv.Itoa(index) + `] %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -410,7 +410,7 @@ func (s *CustomSlice) writeTemplatePanther(f *os.File, index int) {
 	{{end}}{{end}}{{end}}
 		`)
 
-	case profileFieldNameMap[ListField]:
+	case ProfileFieldNameMap[ListField]:
 		f.WriteString(`
 	{{if .Custom}}{{with $customSection := index .Custom ` + strconv.Itoa(index) + `}}{{if HasRender $customSection.List}}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%% List: Custom[` + strconv.Itoa(index) + `] %%%%%%%%%%%%%%%%%%%%%%%%%%%

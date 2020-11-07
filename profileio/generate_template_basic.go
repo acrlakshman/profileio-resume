@@ -15,7 +15,6 @@ func generateTemplateBasic(profile *Profile, sortedSectionList []SectionIndexRan
 	f.WriteString(`
 	\documentclass{res}
 	\usepackage{fancyhdr}
-	\usepackage{fontspec}
 	\usepackage{multicol}
 	\usepackage{setspace}
 	\usepackage[hidelinks]{hyperref}
@@ -49,34 +48,34 @@ func generateTemplateBasic(profile *Profile, sortedSectionList []SectionIndexRan
 
 	for _, data := range sortedSectionList {
 		switch data.name {
-		case profileFieldNameMap[WorkField]:
+		case ProfileFieldNameMap[WorkField]:
 			profile.Work.List.writeTemplateBasic(f)
 
-		case profileFieldNameMap[EducationField]:
+		case ProfileFieldNameMap[EducationField]:
 			profile.Education.List.writeTemplateBasic(f)
 
-		case profileFieldNameMap[PublicationsField]:
+		case ProfileFieldNameMap[PublicationsField]:
 			profile.Publications.List.writeTemplateBasic(f)
 
-		case profileFieldNameMap[ProjectsField]:
+		case ProfileFieldNameMap[ProjectsField]:
 			profile.Projects.List.writeTemplateBasic(f)
 
-		case profileFieldNameMap[AwardsField]:
+		case ProfileFieldNameMap[AwardsField]:
 			profile.Awards.List.writeTemplateBasic(f)
 
-		case profileFieldNameMap[SkillsField]:
+		case ProfileFieldNameMap[SkillsField]:
 			profile.Skills.List.writeTemplateBasic(f)
 
-		case profileFieldNameMap[LanguagesField]:
+		case ProfileFieldNameMap[LanguagesField]:
 			profile.Languages.List.writeTemplateBasic(f)
 
-		case profileFieldNameMap[InterestsField]:
+		case ProfileFieldNameMap[InterestsField]:
 			profile.Interests.List.writeTemplateBasic(f)
 
-		case profileFieldNameMap[ReferencesField]:
+		case ProfileFieldNameMap[ReferencesField]:
 			profile.References.List.writeTemplateBasic(f)
 
-		case profileFieldNameMap[CustomField]:
+		case ProfileFieldNameMap[CustomField]:
 			profile.Custom.writeTemplateBasic(f, data.index)
 
 		default:
@@ -245,7 +244,7 @@ func (s *ReferenceDetailSlice) writeTemplateBasic(f *os.File) {
 
 func (s *CustomSlice) writeTemplateBasic(f *os.File, index int) {
 	switch (*s)[index].Type {
-	case profileFieldNameMap[WorkField]:
+	case ProfileFieldNameMap[WorkField]:
 		f.WriteString(`
 	{{if .Custom}}{{with $customSection := index .Custom ` + strconv.Itoa(index) + `}}{{if HasRender $customSection.Work}}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%% Work/Experience: Custom[` + strconv.Itoa(index) + `] %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -264,7 +263,7 @@ func (s *CustomSlice) writeTemplateBasic(f *os.File, index int) {
 	{{end}}{{end}}{{end}}
 		`)
 
-	case profileFieldNameMap[EducationField]:
+	case ProfileFieldNameMap[EducationField]:
 		f.WriteString(`
 	{{if .Custom}}{{with $customSection := index .Custom ` + strconv.Itoa(index) + `}}{{if HasRender $customSection.Education}}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%% Education: Custom[` + strconv.Itoa(index) + `] %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -281,7 +280,7 @@ func (s *CustomSlice) writeTemplateBasic(f *os.File, index int) {
 	{{end}}{{end}}{{end}}
 		`)
 
-	case profileFieldNameMap[PublicationsField]:
+	case ProfileFieldNameMap[PublicationsField]:
 		f.WriteString(`
 	{{if .Custom}}{{with $customSection := index .Custom ` + strconv.Itoa(index) + `}}{{if HasRender $customSection.Publications}}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%% Publications: Custom[` + strconv.Itoa(index) + `] %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -296,7 +295,7 @@ func (s *CustomSlice) writeTemplateBasic(f *os.File, index int) {
 	{{end}}{{end}}{{end}}
 		`)
 
-	case profileFieldNameMap[ProjectsField]:
+	case ProfileFieldNameMap[ProjectsField]:
 		f.WriteString(`
 	{{if .Custom}}{{with $customSection := index .Custom ` + strconv.Itoa(index) + `}}{{if HasRender $customSection.Projects}}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%% Projects: Custom[` + strconv.Itoa(index) + `] %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -313,7 +312,7 @@ func (s *CustomSlice) writeTemplateBasic(f *os.File, index int) {
 	{{end}}{{end}}{{end}}{{end}}{{end}}{{end}}{{end}}
 		`)
 
-	case profileFieldNameMap[AwardsField]:
+	case ProfileFieldNameMap[AwardsField]:
 		f.WriteString(`
 	{{if .Custom}}{{with $customSection := index .Custom ` + strconv.Itoa(index) + `}}{{if HasRender $customSection.Awards}}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%% Awards: Custom[` + strconv.Itoa(index) + `] %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -328,7 +327,7 @@ func (s *CustomSlice) writeTemplateBasic(f *os.File, index int) {
 	{{end}}{{end}}{{end}}
 		`)
 
-	case profileFieldNameMap[SkillsField]:
+	case ProfileFieldNameMap[SkillsField]:
 		f.WriteString(`
 	{{if .Custom}}{{with $customSection := index .Custom ` + strconv.Itoa(index) + `}}{{if HasRender $customSection.Skills}}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%% Skills: Custom[` + strconv.Itoa(index) + `] %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -343,7 +342,7 @@ func (s *CustomSlice) writeTemplateBasic(f *os.File, index int) {
 	{{end}}{{end}}{{end}}
 		`)
 
-	case profileFieldNameMap[LanguagesField]:
+	case ProfileFieldNameMap[LanguagesField]:
 		f.WriteString(`
 	{{if .Custom}}{{with $customSection := index .Custom ` + strconv.Itoa(index) + `}}{{if HasRender $customSection.Languages}}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%% Languages: Custom[` + strconv.Itoa(index) + `] %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -357,7 +356,7 @@ func (s *CustomSlice) writeTemplateBasic(f *os.File, index int) {
 	\end{itemize}{{end}}{{end}}{{end}}
 		`)
 
-	case profileFieldNameMap[InterestsField]:
+	case ProfileFieldNameMap[InterestsField]:
 		f.WriteString(`
 	{{if .Custom}}{{with $customSection := index .Custom ` + strconv.Itoa(index) + `}}{{if HasRender $customSection.Interests}}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%% Interests: Custom[` + strconv.Itoa(index) + `] %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -372,7 +371,7 @@ func (s *CustomSlice) writeTemplateBasic(f *os.File, index int) {
 	{{end}}{{end}}{{end}}
 		`)
 
-	case profileFieldNameMap[ReferencesField]:
+	case ProfileFieldNameMap[ReferencesField]:
 		f.WriteString(`
 	{{if .Custom}}{{with $customSection := index .Custom ` + strconv.Itoa(index) + `}}{{if HasRender $customSection.References}}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%% References: Custom[` + strconv.Itoa(index) + `] %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -388,7 +387,7 @@ func (s *CustomSlice) writeTemplateBasic(f *os.File, index int) {
 	{{end}}{{end}}{{end}}
 		`)
 
-	case profileFieldNameMap[ListField]:
+	case ProfileFieldNameMap[ListField]:
 		f.WriteString(`
 	{{if .Custom}}{{with $customSection := index .Custom ` + strconv.Itoa(index) + `}}{{if HasRender $customSection.List}}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%% List: Custom[` + strconv.Itoa(index) + `] %%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -14,70 +14,70 @@ func GetSortedSectionArray(profile *Profile) []SectionIndexRank {
 	rank := 0
 	defaultRanks := GetDefaultRanks(profile.Config.Theme.Value)
 
-	name = profileFieldNameMap[WorkField]
+	name = ProfileFieldNameMap[WorkField]
 	rank = profile.Work.Rank
 	if rank <= 0 {
 		rank = defaultRanks[name]
 	}
 	sortedSectionList = append(sortedSectionList, SectionIndexRank{name: name, rank: rank})
 
-	name = profileFieldNameMap[EducationField]
+	name = ProfileFieldNameMap[EducationField]
 	rank = profile.Education.Rank
 	if rank <= 0 {
 		rank = defaultRanks[name]
 	}
 	sortedSectionList = append(sortedSectionList, SectionIndexRank{name: name, rank: rank})
 
-	name = profileFieldNameMap[ProjectsField]
+	name = ProfileFieldNameMap[ProjectsField]
 	rank = profile.Projects.Rank
 	if rank <= 0 {
 		rank = defaultRanks[name]
 	}
 	sortedSectionList = append(sortedSectionList, SectionIndexRank{name: name, rank: rank})
 
-	name = profileFieldNameMap[AwardsField]
+	name = ProfileFieldNameMap[AwardsField]
 	rank = profile.Awards.Rank
 	if rank <= 0 {
 		rank = defaultRanks[name]
 	}
 	sortedSectionList = append(sortedSectionList, SectionIndexRank{name: name, rank: rank})
 
-	name = profileFieldNameMap[PublicationsField]
+	name = ProfileFieldNameMap[PublicationsField]
 	rank = profile.Publications.Rank
 	if rank <= 0 {
 		rank = defaultRanks[name]
 	}
 	sortedSectionList = append(sortedSectionList, SectionIndexRank{name: name, rank: rank})
 
-	name = profileFieldNameMap[SkillsField]
+	name = ProfileFieldNameMap[SkillsField]
 	rank = profile.Skills.Rank
 	if rank <= 0 {
 		rank = defaultRanks[name]
 	}
 	sortedSectionList = append(sortedSectionList, SectionIndexRank{name: name, rank: rank})
 
-	name = profileFieldNameMap[LanguagesField]
+	name = ProfileFieldNameMap[LanguagesField]
 	rank = profile.Languages.Rank
 	if rank <= 0 {
 		rank = defaultRanks[name]
 	}
 	sortedSectionList = append(sortedSectionList, SectionIndexRank{name: name, rank: rank})
 
-	name = profileFieldNameMap[InterestsField]
+	name = ProfileFieldNameMap[InterestsField]
 	rank = profile.Interests.Rank
 	if rank <= 0 {
 		rank = defaultRanks[name]
 	}
 	sortedSectionList = append(sortedSectionList, SectionIndexRank{name: name, rank: rank})
 
-	name = profileFieldNameMap[ReferencesField]
+	name = ProfileFieldNameMap[ReferencesField]
 	rank = profile.References.Rank
 	if rank <= 0 {
 		rank = defaultRanks[name]
 	}
 	sortedSectionList = append(sortedSectionList, SectionIndexRank{name: name, rank: rank})
 
-	name = profileFieldNameMap[CustomField]
+	name = ProfileFieldNameMap[CustomField]
 	for index, customSection := range profile.Custom {
 		rank = customSection.Rank
 		if rank <= 0 {
