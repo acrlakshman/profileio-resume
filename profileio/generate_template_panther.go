@@ -147,7 +147,7 @@ func (s *WorkDetailSlice) writeTemplatePanther(f *os.File) {
 	\begin{itemize}[leftmargin=\parindent]
 	\setlength{\itemsep}{0mm} \smallskip
 	{{range $i, $subItem := $item.Value.Highlights}}{{if $subItem}}
-		\item {{ $subItem.Detail }}{{end}}{{end}}
+		\item {{if $subItem.Brief}}{\bf {{ SanitizeText $subItem.Brief -}} } {{end}}{{ SanitizeText $subItem.Detail }}{{end}}{{end}}
 	\end{itemize}
 	{{end}}{{end}}
 	{{end}}{{end}}
@@ -162,7 +162,7 @@ func (s *EducationDetailSlice) writeTemplatePanther(f *os.File) {
 	{{ $length := len .Education.List }}{{range $index, $item := .Education.List}}{{if $item.Render}}
 	%~~~~~~~~~~~~~~~~~~~~~~~~~~ Item {{ $index }} ~~~~~~~~~~~~~~~~~~~~~~~~~~%
 	{\bf {{$item.Value.Degree}} {{$item.Value.Major -}} }{{if $item.Value.Minor}}, {{$item.Value.Minor}} (minor){{end}} \hfill {{if or $item.Value.Grade $item.Value.GradeTotal}}GPA: {{ParseGrade $item.Value.Grade}}{{if and $item.Value.Grade $item.Value.GradeTotal}}/{{end}}{{$item.Value.GradeTotal}}{{end}} \\
-	{ {{- $item.Value.Institution}}, \hfill {{if or $item.Value.StartDate $item.Value.EndDate}}{\it {{$item.Value.StartDate}}{{if and $item.Value.StartDate $item.Value.EndDate}} - {{end}}{{$item.Value.EndDate -}} }{{end -}} } {{ $indexP1 := Inc $index 1 }}{{if eq $length $indexP1}}{{else}}\\ \\{{end}}{{end}}{{end}}
+	{ {{- $item.Value.Institution}} \hfill {{if or $item.Value.StartDate $item.Value.EndDate}}{\it {{$item.Value.StartDate}}{{if and $item.Value.StartDate $item.Value.EndDate}} - {{end}}{{$item.Value.EndDate -}} }{{end -}} } {{ $indexP1 := Inc $index 1 }}{{if eq $length $indexP1}}{{else}}\\ \\{{end}}{{end}}{{end}}
 	{{end}}{{end}}
 	`)
 }
@@ -190,11 +190,11 @@ func (s *ProjectDetailSlice) writeTemplatePanther(f *os.File) {
 	{{range $index, $item := .Projects.List}}{{if $item.Render}}
 	%~~~~~~~~~~~~~~~~~~~~~~~~~~ Item {{ $index }} ~~~~~~~~~~~~~~~~~~~~~~~~~~%
 	\hspace*{-0.25in}{\bf {{ $item.Value.Name -}} } \\
-	\hspace*{-0.25in}{{if $item.Value.Team}}{{ $item.Value.Team }}{{end}}{{if $item.Value.Note}} ( {{- $item.Value.Note -}} ){{end}} \hfill {{if or $item.Value.StartDate $item.Value.EndDate}}{{$item.Value.StartDate}}{{if and $item.Value.StartDate $item.Value.EndDate -}} - {{- end}}{{$item.Value.EndDate }}{{end}}
+	\hspace*{-0.25in}{{if $item.Value.Team}}{{ SanitizeText $item.Value.Team }}{{end}}{{if $item.Value.Note}} ( {{- SanitizeText $item.Value.Note -}} ){{end}} \hfill {{if or $item.Value.StartDate $item.Value.EndDate}}{{$item.Value.StartDate}}{{if and $item.Value.StartDate $item.Value.EndDate -}} - {{- end}}{{$item.Value.EndDate }}{{end}}
 	{{if $item.Value.Highlights}}{{ $length := len $item.Value.Highlights }}{{if gt $length 0}}\begin{itemize}[leftmargin=\parindent]
 	\setlength{\itemsep}{0mm} \smallskip
 	{{range $i, $subItem := $item.Value.Highlights}}
-	\item {{ $subItem.Detail }}{{end}}
+	\item {{ SanitizeText $subItem.Detail }}{{end}}
 	\end{itemize}
 	{{end}}{{end}}{{end}}{{end}}{{end}}{{end}}
 	`)
@@ -290,7 +290,7 @@ func (s *CustomSlice) writeTemplatePanther(f *os.File, index int) {
 	\begin{itemize}[leftmargin=\parindent]
 	\setlength{\itemsep}{0mm} \smallskip
 	{{range $i, $subItem := $item.Value.Highlights}}{{if $subItem}}
-		\item {{ $subItem.Detail }}{{end}}{{end}}
+		\item {{if $subItem.Brief}}{\bf {{ SanitizeText $subItem.Brief -}} } {{end}}{{ SanitizeText $subItem.Detail }}{{end}}{{end}}
 	\end{itemize}
 	{{end}}{{end}}
 	{{end}}{{end}}{{end}}
@@ -304,7 +304,7 @@ func (s *CustomSlice) writeTemplatePanther(f *os.File, index int) {
 	{{ $length := len $customSection.Education }}{{range $index, $item := $customSection.Education}}{{if $item.Render}}
 	%~~~~~~~~~~~~~~~~~~~~~~~~~~ Item {{ $index }} ~~~~~~~~~~~~~~~~~~~~~~~~~~%
 	{\bf {{$item.Value.Degree}} {{$item.Value.Major -}} }{{if $item.Value.Minor}}, {{$item.Value.Minor}} (minor){{end}} \hfill {{if or $item.Value.Grade $item.Value.GradeTotal}}GPA: {{ParseGrade $item.Value.Grade}}{{if and $item.Value.Grade $item.Value.GradeTotal}}/{{end}}{{$item.Value.GradeTotal}}{{end}} \\
-	{ {{- $item.Value.Institution}}, \hfill {{if or $item.Value.StartDate $item.Value.EndDate}}{\it {{$item.Value.StartDate}}{{if and $item.Value.StartDate $item.Value.EndDate}} - {{end}}{{$item.Value.EndDate -}} }{{end -}} } {{ $indexP1 := Inc $index 1 }}{{if eq $length $indexP1}}{{else}}\\ \\{{end}}{{end}}{{end}}
+	{ {{- $item.Value.Institution}} \hfill {{if or $item.Value.StartDate $item.Value.EndDate}}{\it {{$item.Value.StartDate}}{{if and $item.Value.StartDate $item.Value.EndDate}} - {{end}}{{$item.Value.EndDate -}} }{{end -}} } {{ $indexP1 := Inc $index 1 }}{{if eq $length $indexP1}}{{else}}\\ \\{{end}}{{end}}{{end}}
 	{{end}}{{end}}{{end}}
 		`)
 
@@ -330,11 +330,11 @@ func (s *CustomSlice) writeTemplatePanther(f *os.File, index int) {
 	{{range $index, $item := $customSection.Projects}}{{if $item.Render}}
 	%~~~~~~~~~~~~~~~~~~~~~~~~~~ Item {{ $index }} ~~~~~~~~~~~~~~~~~~~~~~~~~~%
 	\hspace*{-0.25in}{\bf {{ $item.Value.Name -}} } \\
-	\hspace*{-0.25in}{{if $item.Value.Team}}{{ $item.Value.Team }}{{end}}{{if $item.Value.Note}} ( {{- $item.Value.Note -}} ){{end}} \hfill {{if or $item.Value.StartDate $item.Value.EndDate}}{{$item.Value.StartDate}}{{if and $item.Value.StartDate $item.Value.EndDate -}} - {{- end}}{{$item.Value.EndDate }}{{end}}
+	\hspace*{-0.25in}{{if $item.Value.Team}}{{ SanitizeText $item.Value.Team }}{{end}}{{if $item.Value.Note}} ( {{- SanitizeText $item.Value.Note -}} ){{end}} \hfill {{if or $item.Value.StartDate $item.Value.EndDate}}{{$item.Value.StartDate}}{{if and $item.Value.StartDate $item.Value.EndDate -}} - {{- end}}{{$item.Value.EndDate }}{{end}}
 	{{if $item.Value.Highlights}}{{ $length := len $item.Value.Highlights }}{{if gt $length 0}}\begin{itemize}[leftmargin=\parindent]
 	\setlength{\itemsep}{0mm} \smallskip
 	{{range $i, $subItem := $item.Value.Highlights}}
-	\item {{- if $customSection.Meta}}{{if $customSection.Meta.ListStyleType}}{{if eq $customSection.Meta.ListStyleType "none"}}[]{{end}}{{end}}{{end}} {{ $subItem.Detail }}{{end}}
+	\item {{- if $customSection.Meta}}{{if $customSection.Meta.ListStyleType}}{{if eq $customSection.Meta.ListStyleType "none"}}[]{{end}}{{end}}{{end}} {{ SanitizeText $subItem.Detail }}{{end}}
 	\end{itemize}
 	{{end}}{{end}}{{end}}{{end}}{{end}}{{end}}{{end}}
 		`)
@@ -419,7 +419,7 @@ func (s *CustomSlice) writeTemplatePanther(f *os.File, index int) {
 	\setlength{\itemsep}{6pt}
 	{{range $index, $item := $customSection.List}}{{if $item.Render}}
 	%~~~~~~~~~~~~~~~~~~~~~~~~~~ Item ~~~~~~~~~~~~~~~~~~~~~~~~~~~%
-		\item {{- if $customSection.Meta}}{{if $customSection.Meta.ListStyleType}}{{if eq $customSection.Meta.ListStyleType "none"}}[]{{end}}{{end}}{{end}} {{if $item.Value.Brief}}{\bf {{ $item.Value.Brief -}} }. {{end}}{{ $item.Value.Detail }}{{end}}{{end}}
+		\item {{- if $customSection.Meta}}{{if $customSection.Meta.ListStyleType}}{{if eq $customSection.Meta.ListStyleType "none"}}[]{{end}}{{end}}{{end}} {{if $item.Value.Brief}}{\bf {{ $item.Value.Brief -}} } {{end}}{{ $item.Value.Detail }}{{end}}{{end}}
 	\end{itemize}
 	{{end}}{{end}}{{end}}
 		`)

@@ -1,39 +1,36 @@
 {
   "config": {
-    "homepage": "https://rselle.com",
+    "homepage": "https://profileio.lakshmananumolu.com",
     "theme": {
       "value": "panther",
       "render": true,
       "meta": {
         "showPageNumbers": true,
         "hideSectionLines": false,
-        "pantherHeaderNameFontSize": 60,
+        "pantherHeaderNameFontSize": 45,
         "pantherHeaderColumnOneWidth": 0.6,
         "pantherHeaderColumnTwoWidth": 0.4
       }
     },
-    "analytics": { "ga": { "trackingId": "UA-37418034-1", "enable": true } },
-    "meta": { "hideFooterCredit": true }
+    "analytics": { "ga": { "trackingId": "", "enable": true } },
+    "meta": { "showResumeLink": true }
   },
   "basics": {
-    "name": { "value": "Ram Selle", "render": true },
-    "label": { "value": "Senior Software Engineer", "render": false },
+    "name": { "value": "Lakshmi Vera", "render": true },
+    "label": { "value": "Senior Software Engineer", "render": true },
     "image": { "value": "pic.png", "render": true },
-    "email": { "value": "rselle@uwalumni.com", "render": true },
-    "phone": { "value": "+1(111)111-1111", "render": true },
-    "url": {
-      "value": "https://github.com/acrlakshman/profileio",
-      "render": true
-    },
+    "email": { "value": "anumolu@uwalumni.com", "render": true },
+    "phone": { "value": "", "render": false },
+    "url": { "value": "https://profileio.lakshmananumolu.com", "render": true },
     "summary": {
-      "label": "Summary",
-      "value": "Space to summarize the work I have been doing and the focus of my work.",
+      "label": "About me",
+      "value": "Sample text written as part of the demo for profileio. Sample text written as part of the demo for profileio. Sample text written as part of the demo for profileio.",
       "render": true
     },
     "location": {
       "value": {
-        "address": "XXXX University Avenue",
-        "postalCode": "WI 537XX",
+        "address": "Street",
+        "postalCode": "WI XXXXX",
         "city": "Madison",
         "countryName": "USA",
         "region": "Wisconsin"
@@ -77,31 +74,36 @@
     ]
   },
   "work": {
-    "label": "Work & Experience",
+    "label": "Experience",
     "rank": 1,
     "list": [
       {
         "value": {
-          "name": "DreamWorks Animation",
-          "location": "Glendale CA",
+          "name": "Walt Disney Animation Studios",
+          "location": "Burbank, CA",
           "brief": "",
           "position": "Senior Software Engineer",
-          "url": "https://company.com",
+          "url": "https://www.disneyanimation.com/",
           "startDate": "2019",
           "endDate": "Present",
           "active": true,
           "highlights": [
             {
-              "brief": "",
-              "detail": "I did this and it has so and so impact"
+              "brief": "Architected so and so.",
+              "detail": "Present few details and its impact"
+            },
+            {
+              "detail": "Sample text written as part of the demo for profileio. Sample text written as part of the demo for profileio"
             },
             {
               "brief": "",
-              "detail": "I did this and it has so and so impact"
+              "detail": "This is the sample text written for the demo of profileio"
             },
             {
-              "brief": "",
-              "detail": "I did this and it has so and so impact"
+              "detail": "Sample text written as part of the demo for profileio"
+            },
+            {
+              "detail": "Sample text written as part of the demo for profileio"
             }
           ]
         },
@@ -109,49 +111,77 @@
       },
       {
         "value": {
-          "name": "Company Name",
-          "location": "Sunnyvale CA",
+          "name": "Dreamworks Animation",
+          "location": "Glendale, CA",
           "brief": "",
           "position": "Software Engineer",
-          "url": "https://company.com",
+          "url": "https://www.dreamworks.com/",
           "startDate": "2017",
           "endDate": "2019",
-          "active": true,
+          "active": false,
           "highlights": [
             {
-              "brief": "",
-              "detail": "I did this and it has so and so impact"
+              "detail": "Sample text written as part of the demo for profileio. Sample text written as part of the demo for profileio"
             },
             {
               "brief": "",
-              "detail": "I did this and it has so and so impact"
+              "detail": "This is the sample text written for the demo of profileio"
             },
             {
-              "brief": "",
-              "detail": "I did this and it has so and so impact"
+              "detail": "Sample text written as part of the demo for profileio"
             },
             {
-              "brief": "",
-              "detail": "I did this and it has so and so impact"
+              "detail": "Sample text written as part of the demo for profileio"
             }
           ]
         },
         "render": true
+      },
+      {
+        "value": {
+          "name": "University of Wisconsin-Madison",
+          "location": "Madison, WI",
+          "brief": "University",
+          "position": "Research Assistant",
+          "url": "https://wisc.edu",
+          "startDate": "2013",
+          "endDate": "2017",
+          "highlights": [
+            {
+              "detail": "Implemented phase-change capabilities into in-house developed solver to perform two-phase boilingsimulations"
+            },
+            {
+              "detail": "Developed fourth order accurate semi-Lagrangian method tosolve Hamilton-Jacobi equations that canimprove the quality of two-phase fluid simulations in thecontext of level set methods"
+            },
+            {
+              "detail": "Developed and maintained a fully parallelized two-phase flow solver in C++ [12K LOC] with theaid ofgradient augmented level set and reinitialization algorithms and Ghost Fluid Method"
+            },
+            {
+              "detail": "Performed a detailed numerical study on interFoam, a two-phase flow solver shipped with OpenFOAM C++ libraries"
+            },
+            {
+              "detail": "Developed post-processing utilities in C++ to achieve photo-realistic rendering for density fieldsfromOpenFOAM results using Mitsuba"
+            }
+          ]
+        },
+        "render": false
       }
     ]
   },
   "education": {
     "label": "Education",
-    "rank": 2,
+    "rank": 7,
     "list": [
       {
         "value": {
-          "institution": "Carnegie Mellon University",
-          "url": "https://cmu.edu",
+          "institution": "University of Wisconsin-Madison",
+          "url": "https://wisc.edu",
           "major": "Computer Science",
           "minor": "",
           "degree": "Ph.D.",
-          "endDate": ""
+          "grade": 3.9,
+          "gradeTotal": 4,
+          "courses": ["CS521 - Computer Graphics", "CS801 - HPC"]
         },
         "render": true
       },
@@ -159,83 +189,106 @@
         "value": {
           "institution": "University of Wisconsin-Madison",
           "url": "https://wisc.edu",
-          "major": "Physics",
+          "major": "Computer Science and Mathematics",
           "minor": "",
-          "degree": "BS",
-          "endDate": ""
+          "degree": "B.S."
         },
         "render": true
       }
     ]
   },
   "projects": {
-    "label": "Recent Projects",
-    "rank": 4,
+    "label": "Projects",
+    "rank": 6,
+    "maxItemsToRender": 3,
     "list": [
       {
         "value": {
           "name": "ProfileIO",
           "description": "Delightfully simple website and resume generator for students, researchers, and engineers",
-          "team": "Lakshman Anumolu",
+          "team": "with Lakshman Anumolu",
+          "note": "",
           "thumbnail": "profileio.png",
           "highlights": [
             {
-              "brief": "",
               "detail": "Delightfully simple website and resume generator for students, researchers, and engineers"
             },
             {
-              "brief": "",
-              "detail": "Generate website and resume via github actions. MacOS dedicated fonts are made possible to use via actions"
+              "detail": "Sample text written as part of the demo for profileio"
+            },
+            {
+              "detail": "Sample text written as part of the demo for profileio"
             }
           ],
           "keywords": ["resume", "website", "YAML", "markdown"],
           "startDate": "2020",
-          "endDate": "",
+          "endDate": "Present",
           "url": "https://github.com/acrlakshman/profileio",
           "roles": ["Architect", "Developer"],
           "type": "application",
-          "webPage": { "slug": "profileio", "detail": "" }
+          "webPage": {
+            "slug": "profileio",
+            "detail": "##### [ProfileIO](https://github.com/acrlakshman/profileio)\n\nSteps to run:\n\n```sh\ngit clone https://github.com/acrlakshman/profileio\n\ncd profileio\nyarn && yarn start\n```\n\n##### [profileio-resume](https://github.com/acrlakshman/profileio-resume)\n\n```go\npackage main\n\nimport (\n\t\"io/ioutil\"\n\t\"log\"\n\t\"os\"\n\t\"os/exec\"\n\n\t\"github.com/acrlakshman/profileio-resume/profileio\"\n)\n\nfunc main() {\n\tjsonData, _ := ioutil.ReadFile(\"./profile_resume.json\")\n\tprofileio.ProfileIO(jsonData)\n\n\tapp := \"xelatex\"\n\tif !commandExists(app) {\n\t\tapp = \"pdflatex\"\n\t\tif !commandExists(app) {\n\t\t\tlog.Print(\"Cannot compile resume.tex\")\n\t\t\tos.Exit(0)\n\t\t}\n\t}\n\n\tos.Chdir(\"./resume\")\n\tcmd := exec.Command(app, \"resume.tex\")\n\t_, err := cmd.Output()\n\tif err != nil {\n\t\tlog.Printf(\"%v\", err)\n\t}\n}\n\nfunc commandExists(cmd string) bool {\n\t_, err := exec.LookPath(cmd)\n\n\treturn err == nil\n}\n```"
+          }
         },
         "render": true
       },
       {
         "value": {
-          "name": "Templates to render CFD results photorealistically",
-          "description": "Scene templates to kick-start scalable rendering of CFD results photorealistically.",
-          "team": "Lakshman Anumolu",
+          "name": "Project VI",
+          "description": "Sample text written as part of the demo for ProfileIO",
+          "team": "",
           "note": "",
-          "thumbnail": "scene_templates.png",
+          "thumbnail": "bmv_t.gif",
           "highlights": [
             {
-              "brief": "",
-              "detail": "Scene templates to kick-start scalable rendering of CFD results photorealistically"
+              "detail": "Sample text written as part of the demo for profileio"
             },
             {
-              "brief": "",
-              "detail": "Comes with cross platform containerized tool kit"
+              "detail": "Sample text written as part of the demo for profileio"
             }
           ],
-          "keywords": ["CFD", "photorealistic", "mitsuba"],
-          "startDate": "2020",
-          "endDate": "",
-          "url": "https://github.com/acrlakshman/scene_templates",
-          "roles": ["Architect", "Developer"],
-          "type": "application"
+          "keywords": ["STL", "OBJ", "TLGF", "surface mesh"],
+          "startDate": "2015",
+          "endDate": "Present",
+          "url": "https://github.com/acrlakshman/profileio"
+        },
+        "render": true
+      },
+      {
+        "value": {
+          "name": "Project V",
+          "description": "Sample text written as part of the demo for ProfileIO",
+          "team": "",
+          "note": "",
+          "thumbnail": "crystal_growth_t.png",
+          "highlights": [
+            {
+              "detail": "Sample text written as part of the demo for profileio"
+            },
+            {
+              "detail": "Sample text written as part of the demo for profileio"
+            }
+          ],
+          "keywords": ["STL", "OBJ", "TLGF", "surface mesh"],
+          "startDate": "2015",
+          "endDate": "Present",
+          "url": "https://github.com/acrlakshman/profileio"
         },
         "render": true
       }
     ]
   },
   "awards": {
-    "label": "Awards",
-    "rank": 11,
+    "label": "Awards & Achievements",
+    "rank": 3,
     "list": [
       {
         "value": {
-          "title": "Best Student Project",
-          "date": "2016",
-          "awarder": "SIGGRAPH",
-          "summary": "Framework for artistic rendering"
+          "title": "Marshal award",
+          "date": "May 2114",
+          "awarder": "ILASS",
+          "summary": "Best paper for demonstrating spray characteristics during so and so configuration"
         },
         "render": true
       }
@@ -243,17 +296,18 @@
   },
   "publications": {
     "label": "Publications",
-    "rank": 3,
+    "rank": 4,
+    "maxItemsToRender": 3,
     "list": [
       {
         "value": {
           "type": "article",
-          "author": "Anumolu, L., Trujillo, M.F.",
-          "title": "Gradient augmented level set method for phase change simulations",
+          "author": "Author I, Author II",
+          "title": "Made-up title of an article for ProfileIO' demo",
           "journal": "Journal of Computational Physics",
           "volume": 353,
           "year": 2018,
-          "number": 1,
+          "number": 0,
           "pages": "377-406",
           "thumbnail": "gals_phase_change.png",
           "url": "https://www.sciencedirect.com/science/article/pii/S0021999117307696"
@@ -263,8 +317,8 @@
       {
         "value": {
           "type": "book",
-          "author": "Trujillo, M.F., Anumolu, L., Ryddner, D.",
-          "title": "Direct Numerical Simulations for Two-Phase Flows with Phase Change",
+          "author": "Author I, Author II, and Author III",
+          "title": "Sample title of a book made-up to give demo for profileio",
           "series": "Encyclopedia of Two-Phase Heat Transfer and Flow",
           "volume": 3,
           "publisher": "World Scientific",
@@ -278,8 +332,8 @@
       {
         "value": {
           "type": "article",
-          "author": "Trujillo, M.F., Anumolu, L., Ryddner, D.",
-          "title": "The distortion of the level set gradient under advection",
+          "author": "Author I, Author II, and Author III",
+          "title": "Sample title of an article made-up to give demo for profileio",
           "journal": "Journal of Computational Physics",
           "volume": 334,
           "year": 2017,
@@ -293,8 +347,8 @@
       {
         "value": {
           "type": "article",
-          "author": "Lewis, S.R., Trujillo, M.F., Anumolu, L.",
-          "title": "Numerical Simulation of Droplet Train and Free Surface Jet Impingement",
+          "author": "Author I, Author II, and Author III",
+          "title": "Sample title of an article made-up to give demo for profileio",
           "journal": "International Journal of Heat and Fluid Flow",
           "volume": 44,
           "year": 2013,
@@ -308,8 +362,8 @@
       {
         "value": {
           "type": "article",
-          "author": "Anumolu, L., Trujillo, M.F.",
-          "title": "Gradient Augmented Reinitialization Scheme for the Level Set Method",
+          "author": "Author I and Author II",
+          "title": "Sample title of an article made-up to give demo for profileio",
           "journal": "International Journal of Numerical Methods in Fluids",
           "volume": 73,
           "year": 2013,
@@ -323,13 +377,13 @@
       {
         "value": {
           "type": "article",
-          "author": "Deshpande, S.S., Anumolu, L., Trujillo, M.F.",
-          "title": "Evaluating the performance of the two-phase flow solver interFoam",
+          "author": "Author I, Author II, and Author III",
+          "title": "Sample title of an article made-up to give demo for profileio",
           "journal": "Computational Science & Discovery",
           "volume": 5,
           "year": 2012,
           "number": 0,
-          "pages": "014016:1-36",
+          "pages": "014016: 1-36",
           "thumbnail": "interfoam_thumbnail.png",
           "url": "http://iopscience.iop.org/1749-4699/5/1/014016"
         },
@@ -339,139 +393,120 @@
   },
   "gallery": {
     "label": "Gallery",
-    "rank": 5,
+    "rank": 20,
     "list": [
       {
         "value": {
           "type": "image",
-          "src": "pic.png",
+          "src": "bmv_t.gif",
           "caption": {
-            "title": "Basic Model Viewer",
-            "description": "A project"
+            "title": "ProfileIO",
+            "description": "Delightfully simple website and resume generator for students, researchers, and engineers"
           }
         },
-        "render": false
+        "render": true
+      },
+      {
+        "value": {
+          "type": "image",
+          "src": "scene_templates.png",
+          "caption": { "title": "", "description": "" }
+        },
+        "render": true
+      },
+      {
+        "value": {
+          "type": "image",
+          "src": "bmv_t.gif",
+          "caption": {
+            "title": "Basic Model Viewer",
+            "description": "A Qt5 based visualization utility for basic geometric objects"
+          }
+        },
+        "render": true
       },
       {
         "value": {
           "type": "video",
           "platform": "youtube",
-          "videoId": "Wsije1KetVw"
+          "videoId": "35UEkzww5ds"
         },
-        "render": false
+        "render": true
       },
       {
         "value": {
           "type": "video",
           "platform": "youtube",
-          "videoId": "Wsije1KetVw"
+          "videoId": "SRvZxvmoa_g"
         },
-        "render": false
+        "render": true
       },
       {
         "value": {
           "type": "video",
           "platform": "youtube",
-          "videoId": "Wsije1KetVw"
+          "videoId": "CsZua1qI4Zc"
         },
-        "render": false
-      },
-      {
-        "value": {
-          "type": "video",
-          "platform": "vimeo",
-          "videoId": "459803240"
-        },
-        "render": false
+        "render": true
       }
     ]
   },
   "skills": {
     "label": "Skills",
-    "rank": 7,
+    "rank": 20,
     "list": [
       {
         "value": {
-          "name": "Programming Languages",
-          "level": "Fluent",
-          "keywords": ["C++", "Go", "Python"]
+          "name": "Web development",
+          "level": "Master",
+          "keywords": ["HTML", "CSS", "JavaScript"]
         },
-        "render": true
-      },
-      {
-        "value": {
-          "name": "Tools",
-          "level": "Experienced",
-          "keywords": ["CMake", "gdb", "valgrind", "git"]
-        },
-        "render": true
-      },
-      {
-        "value": {
-          "name": "Environments",
-          "level": "Experienced",
-          "keywords": ["Linux", "MacOS", "Windows"]
-        },
-        "render": true
+        "render": false
       }
     ]
   },
   "languages": {
     "label": "Languages",
-    "rank": 17,
+    "rank": 30,
     "list": [
       {
-        "value": {
-          "language": "English",
-          "fluency": "Fluent"
-        },
+        "value": { "language": "English", "fluency": "Fluent" },
         "render": true
       },
       {
-        "value": {
-          "language": "Spannish",
-          "fluency": "Beginner"
-        },
+        "value": { "language": "Spanish", "fluency": "Native speaker" },
         "render": true
-      }
+      },
+      { "value": { "language": "French", "fluency": "Fluent" }, "render": true }
     ]
   },
   "interests": {
     "label": "Interests",
-    "rank": 18,
+    "rank": 40,
     "list": [
       {
-        "value": {
-          "name": "Sports",
-          "keywords": ["Baseball", "Tennis"]
-        },
-        "render": true
-      },
-      {
-        "value": {
-          "name": "Social",
-          "keywords": ["Community service", "Camping", "Fishing"]
-        },
+        "value": { "name": "Sports", "keywords": ["Soccer", "Basketball"] },
         "render": true
       }
     ]
   },
   "references": {
     "label": "References",
-    "rank": 9,
+    "rank": 50,
     "list": [
       {
         "value": {
-          "name": "Jean Nave",
+          "name": "John Doe",
           "title": "Prof.",
-          "affiliation": "MIT",
-          "address": "XX  Massachusetts Ave.",
-          "postalCode": "MA XXXX",
-          "city": "Cambridge",
+          "affiliation": "University Name",
+          "address": "XXXX University Ave",
+          "postalCode": "WI XXXXX",
+          "city": "City",
           "countryName": "USA",
-          "region": "Massachusetts",
-          "phoneNumber": "+1(XXX)XXX-XXXX",
-          "email": "user@mit.edu"
+          "region": "State",
+          "phoneNumber": "1111111111",
+          "email": "user@domain.edu",
+          "url": "https://github.com/acrlakshman/profileio"
         },
         "render": true
       }
@@ -479,50 +514,83 @@
   },
   "custom": [
     {
-      "rank": 6,
       "label": "Patents",
+      "rank": 2,
       "type": "list",
       "list": [
         {
           "value": {
-            "brief": "",
-            "detail": "Physics based simulations: Level set method for artistic simulations (9999999999)"
+            "brief": "Physics based simulations:",
+            "detail": "Level set method I for artistic simulations (9999999998). Level set method II for artistic simulations (9999999999)."
           },
           "render": true
         },
         {
           "value": {
-            "brief": "",
-            "detail": "Computer Graphics: Realistic rendering of glossy surfaces (9999999999)"
+            "detail": "Experimental Physics: Inventing so and so method for so and so (9999999997)"
           },
           "render": true
         }
       ],
-      "meta": {
-        "listStyleType": "none"
-      }
+      "meta": { "listStyleType": "none" }
     },
     {
-      "rank": 6,
-      "label": "Conference Presentations",
-      "type": "publications",
-      "publications": [
+      "label": "Skills",
+      "rank": 9,
+      "type": "list",
+      "list": [
         {
           "value": {
-            "type": "article",
-            "author": "Osher, T.",
-            "title": "Phase field method for simulation",
-            "journal": "SIGGRAPH",
-            "volume": 0,
-            "year": 2017,
-            "thumbnail": "gals_phase_change.png"
+            "brief": "Programming Languages:",
+            "detail": "Fluent: C++, C, Go. Experienced: Python, JavaScript, PHP"
+          },
+          "render": true
+        },
+        {
+          "value": {
+            "brief": "Libraries:",
+            "detail": "Eigen, NumPy, MPI, etc."
+          },
+          "render": true
+        },
+        {
+          "value": {
+            "brief": "Tools:",
+            "detail": "CMake, gdb, valgrind, etc."
           },
           "render": true
         }
       ],
-      "meta": {
-        "listStyleType": "none"
-      }
+      "meta": { "listStyleType": "none" }
+    },
+    {
+      "label": "Vocational Training",
+      "rank": 5,
+      "type": "work",
+      "work": [
+        {
+          "value": {
+            "name": "Animation Studios",
+            "location": "",
+            "brief": "",
+            "position": "Trainee",
+            "url": "",
+            "startDate": "",
+            "endDate": "2014",
+            "active": true,
+            "highlights": [
+              {
+                "detail": "This is the sample text written for the demo of profileio"
+              },
+              {
+                "detail": "Sample text written as part of the demo for profileio"
+              }
+            ]
+          },
+          "render": true
+        }
+      ]
     }
-  ]
+  ],
+  "slugMap": { "projects": { "profileio": { "position": 0 } } }
 }

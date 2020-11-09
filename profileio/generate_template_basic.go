@@ -103,7 +103,7 @@ func (s *WorkDetailSlice) writeTemplateBasic(f *os.File) {
 	\begin{itemize}[leftmargin=*]
 	\setlength{\itemsep}{0mm} \smallskip
 	{{range $i, $subItem := $item.Value.Highlights}}{{if $subItem}}
-		\item {{ $subItem.Detail }}{{end}}{{end}}
+		\item {{if $subItem.Brief}}{\bf {{ SanitizeText $subItem.Brief -}} } {{end}}{{ SanitizeText $subItem.Detail }}{{end}}{{end}}
 	\end{itemize}
 	{{end}}{{end}}
 	{{end}}{{end}}
@@ -152,11 +152,11 @@ func (s *ProjectDetailSlice) writeTemplateBasic(f *os.File) {
 	{{if not $config.Theme.Meta.HideSectionLines}}\moveleft\hoffset\vbox{\hrule width\resumewidth height 0.25pt} \vskip -0.15in{{end}}{{range $index, $item := .Projects.List}}{{if $item.Render}}
 	%~~~~~~~~~~~~~~~~~~~~~~~~~~ Project {{ $index }} ~~~~~~~~~~~~~~~~~~~~~~~~~~%
 	{\bf {{ $item.Value.Name -}} } \\
-	{{if $item.Value.Team}}{{ $item.Value.Team }}{{end}}{{if $item.Value.Note}} {\it {{ $item.Value.Note -}} }{{end}} \hfill {{if or $item.Value.StartDate $item.Value.EndDate}}{\it {{$item.Value.StartDate}}{{if and $item.Value.StartDate $item.Value.EndDate}} - {{end}}{{$item.Value.EndDate -}} }{{end}}
+	{{if $item.Value.Team}}{{ SanitizeText $item.Value.Team }}{{end}}{{if $item.Value.Note}} {\it {{ SanitizeText $item.Value.Note -}} }{{end}} \hfill {{if or $item.Value.StartDate $item.Value.EndDate}}{\it {{$item.Value.StartDate}}{{if and $item.Value.StartDate $item.Value.EndDate}} - {{end}}{{$item.Value.EndDate -}} }{{end}}
 	{{if $item.Value.Highlights}}{{ $length := len $item.Value.Highlights }}{{if gt $length 0}}\begin{itemize}[leftmargin=*]
 	\setlength{\itemsep}{0mm} \smallskip
 	{{range $i, $subItem := $item.Value.Highlights}}
-	\item {{ $subItem.Detail }}{{end}}
+	\item {{ SanitizeText $subItem.Detail }}{{end}}
 	\end{itemize}
 	{{end}}{{end}}{{end}}{{end}}{{end}}{{end}}
 	`)
@@ -257,7 +257,7 @@ func (s *CustomSlice) writeTemplateBasic(f *os.File, index int) {
 	\begin{itemize}[leftmargin=*]
 	\setlength{\itemsep}{0mm} \smallskip
 	{{range $i, $subItem := $item.Value.Highlights}}{{if $subItem}}
-		\item {{ $subItem.Detail }}{{end}}{{end}}
+		\item {{if $subItem.Brief}}{\bf {{ SanitizeText $subItem.Brief -}} } {{end}}{{ SanitizeText $subItem.Detail }}{{end}}{{end}}
 	\end{itemize}
 	{{end}}{{end}}
 	{{end}}{{end}}{{end}}
@@ -303,11 +303,11 @@ func (s *CustomSlice) writeTemplateBasic(f *os.File, index int) {
 	{{if not $config.Theme.Meta.HideSectionLines}}\moveleft\hoffset\vbox{\hrule width\resumewidth height 0.25pt} \vskip -0.15in{{end}}{{range $index, $item := $customSection.Projects}}{{if $item.Render}}
 	%~~~~~~~~~~~~~~~~~~~~~~~~~~ Project {{ $index }} ~~~~~~~~~~~~~~~~~~~~~~~~~~%
 	{\bf {{ $item.Value.Name -}} } \\
-	{{if $item.Value.Team}}{{ $item.Value.Team }}{{end}}{{if $item.Value.Note}} {\it {{ $item.Value.Note -}} }{{end}} \hfill {{if or $item.Value.StartDate $item.Value.EndDate}}{\it {{$item.Value.StartDate}}{{if and $item.Value.StartDate $item.Value.EndDate}} - {{end}}{{$item.Value.EndDate -}} }{{end}}
+	{{if $item.Value.Team}}{{ SanitizeText $item.Value.Team }}{{end}}{{if SanitizeText $item.Value.Note}} {\it {{ $item.Value.Note -}} }{{end}} \hfill {{if or $item.Value.StartDate $item.Value.EndDate}}{\it {{$item.Value.StartDate}}{{if and $item.Value.StartDate $item.Value.EndDate}} - {{end}}{{$item.Value.EndDate -}} }{{end}}
 	{{if $item.Value.Highlights}}{{ $length := len $item.Value.Highlights }}{{if gt $length 0}}\begin{itemize}[leftmargin=*]
 	\setlength{\itemsep}{0mm} \smallskip
 	{{range $i, $subItem := $item.Value.Highlights}}
-	\item {{ $subItem.Detail }}{{end}}
+	\item {{ SanitizeText $subItem.Detail }}{{end}}
 	\end{itemize}
 	{{end}}{{end}}{{end}}{{end}}{{end}}{{end}}{{end}}
 		`)
@@ -394,10 +394,10 @@ func (s *CustomSlice) writeTemplateBasic(f *os.File, index int) {
 	\section{\sc {{ SanitizeLabel $customSection.Label }}} {{if not $config.Theme.Meta.HideSectionLines}}\smallskip{{else}}\vskip 0.2in{{end}}
 	{{if not $config.Theme.Meta.HideSectionLines}}\moveleft\hoffset\vbox{\hrule width\resumewidth height 0.25pt} \vskip -0.15in{{end}}
 	\begin{itemize}[leftmargin=\parindent]
-	\setlength{\itemsep}{6pt}
+	{{- if $customSection.Meta}}{{if $customSection.Meta.ListStyleType}}{{if eq $customSection.Meta.ListStyleType "none"}}\setlength{\itemsep}{3pt}{{else}}\setlength{\itemsep}{0pt}{{end}}{{else}}\setlength{\itemsep}{0pt}{{end}}{{else}}\setlength{\itemsep}{3pt}{{end}}
 	{{range $index, $item := $customSection.List}}{{if $item.Render}}
 	%~~~~~~~~~~~~~~~~~~~~~~~~~~ Item ~~~~~~~~~~~~~~~~~~~~~~~~~~~%
-		\item {{- if $customSection.Meta}}{{if $customSection.Meta.ListStyleType}}{{if eq $customSection.Meta.ListStyleType "none"}}[]{{end}}{{end}}{{end}} {{if $item.Value.Brief}}{\bf {{ $item.Value.Brief -}} }. {{end}}{{ $item.Value.Detail }}{{end}}{{end}}
+		\item {{- if $customSection.Meta}}{{if $customSection.Meta.ListStyleType}}{{if eq $customSection.Meta.ListStyleType "none"}}[]{{end}}{{end}}{{end}} {{if $item.Value.Brief}}{\bf {{ $item.Value.Brief -}} } {{end}}{{ $item.Value.Detail }}{{end}}{{end}}
 	\end{itemize}
 	{{end}}{{end}}{{end}}
 		`)

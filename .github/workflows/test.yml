@@ -10,7 +10,7 @@ jobs:
   test:
     strategy:
       matrix:
-        os: [ubuntu-latest, macos-latest]
+        os: [macos-latest]
         go: ['1.15']
     runs-on: ${{ matrix.os }}
     steps:

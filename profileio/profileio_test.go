@@ -72,8 +72,15 @@ func TestProfileIO(t *testing.T) {
 	generateTemplateForBasicTemplate(&profile, templateFile)
 	defer os.Remove(templateFile)
 
+	// diff basic.tmpl with ./samples/basic(_os).tmpl
+	basicFileRef := "./samples/basic_mac.tmpl"
+
+	if runtime.GOOS == "darwin" {
+		basicFileRef = "./samples/basic_mac.tmpl"
+	}
+
 	// diff basic.tmpl with ./samples/basic.tmpl
-	if !compare("./basic.tmpl", "./samples/basic.tmpl") {
+	if !compare("./basic.tmpl", basicFileRef) {
 		t.Errorf("generated template (\"basic\") differs from the reference one, either make sure to update the reference template or check the code changes.")
 	}
 
@@ -84,7 +91,7 @@ func TestProfileIO(t *testing.T) {
    defer os.Remove(templateFile)
 
 	// diff panther.tmpl with ./samples/panther(_os).tmpl
-   pantherFileRef := "./samples/panther.tmpl"
+   pantherFileRef := "./samples/panther_mac.tmpl"
 
 	if runtime.GOOS == "darwin" {
 	   pantherFileRef = "./samples/panther_mac.tmpl"
