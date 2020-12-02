@@ -13,7 +13,7 @@
       }
     },
     "analytics": { "ga": { "trackingId": "", "enable": true } },
-    "meta": { "showResumeLink": true }
+    "meta": { "showResumeLink": true, "resume": "resume.pdf" }
   },
   "basics": {
     "name": { "value": "Lakshmi Vera", "render": true },
@@ -88,19 +88,13 @@
           "endDate": "Present",
           "active": true,
           "highlights": [
+            { "brief": "", "detail": "Present few details and its impact" },
             {
-              "brief": "Architected so and so.",
-              "detail": "Present few details and its impact"
-            },
-            {
-              "detail": "Sample text written as part of the demo for profileio. Sample text written as part of the demo for profileio"
+              "detail": "Sample text written as part of the demo for profileio"
             },
             {
               "brief": "",
               "detail": "This is the sample text written for the demo of profileio"
-            },
-            {
-              "detail": "Sample text written as part of the demo for profileio"
             },
             {
               "detail": "Sample text written as part of the demo for profileio"
@@ -121,14 +115,11 @@
           "active": false,
           "highlights": [
             {
-              "detail": "Sample text written as part of the demo for profileio. Sample text written as part of the demo for profileio"
+              "detail": "Sample text written as part of the demo for profileio"
             },
             {
               "brief": "",
               "detail": "This is the sample text written for the demo of profileio"
-            },
-            {
-              "detail": "Sample text written as part of the demo for profileio"
             },
             {
               "detail": "Sample text written as part of the demo for profileio"
@@ -139,7 +130,7 @@
       },
       {
         "value": {
-          "name": "University of Wisconsin-Madison",
+          "name": "Texas A&M",
           "location": "Madison, WI",
           "brief": "University",
           "position": "Research Assistant",
@@ -148,13 +139,13 @@
           "endDate": "2017",
           "highlights": [
             {
-              "detail": "Implemented phase-change capabilities into in-house developed solver to perform two-phase boilingsimulations"
+              "detail": "Implemented phase-change capabilities into in-house developed solver to perform two-phase boiling simulations"
             },
             {
               "detail": "Developed fourth order accurate semi-Lagrangian method tosolve Hamilton-Jacobi equations that canimprove the quality of two-phase fluid simulations in thecontext of level set methods"
             },
             {
-              "detail": "Developed and maintained a fully parallelized two-phase flow solver in C++ [12K LOC] with theaid ofgradient augmented level set and reinitialization algorithms and Ghost Fluid Method"
+              "detail": "Developed and maintained a fully parallelized two-phase flow solver in C++ with the aid ofgradient augmented level set and reinitialization algorithms and Ghost Fluid Method"
             },
             {
               "detail": "Performed a detailed numerical study on interFoam, a two-phase flow solver shipped with OpenFOAM C++ libraries"
@@ -164,7 +155,7 @@
             }
           ]
         },
-        "render": false
+        "render": true
       }
     ]
   },
@@ -179,15 +170,13 @@
           "major": "Computer Science",
           "minor": "",
           "degree": "Ph.D.",
-          "grade": 3.9,
-          "gradeTotal": 4,
           "courses": ["CS521 - Computer Graphics", "CS801 - HPC"]
         },
         "render": true
       },
       {
         "value": {
-          "institution": "University of Wisconsin-Madison",
+          "institution": "Texas A&M",
           "url": "https://wisc.edu",
           "major": "Computer Science and Mathematics",
           "minor": "",
@@ -228,7 +217,7 @@
           "type": "application",
           "webPage": {
             "slug": "profileio",
-            "detail": "##### [ProfileIO](https://github.com/acrlakshman/profileio)\n\nSteps to run:\n\n```sh\ngit clone https://github.com/acrlakshman/profileio\n\ncd profileio\nyarn && yarn start\n```\n\n##### [profileio-resume](https://github.com/acrlakshman/profileio-resume)\n\n```go\npackage main\n\nimport (\n\t\"io/ioutil\"\n\t\"log\"\n\t\"os\"\n\t\"os/exec\"\n\n\t\"github.com/acrlakshman/profileio-resume/profileio\"\n)\n\nfunc main() {\n\tjsonData, _ := ioutil.ReadFile(\"./profile_resume.json\")\n\tprofileio.ProfileIO(jsonData)\n\n\tapp := \"xelatex\"\n\tif !commandExists(app) {\n\t\tapp = \"pdflatex\"\n\t\tif !commandExists(app) {\n\t\t\tlog.Print(\"Cannot compile resume.tex\")\n\t\t\tos.Exit(0)\n\t\t}\n\t}\n\n\tos.Chdir(\"./resume\")\n\tcmd := exec.Command(app, \"resume.tex\")\n\t_, err := cmd.Output()\n\tif err != nil {\n\t\tlog.Printf(\"%v\", err)\n\t}\n}\n\nfunc commandExists(cmd string) bool {\n\t_, err := exec.LookPath(cmd)\n\n\treturn err == nil\n}\n```"
+            "detail": "## [ProfileIO](https://github.com/acrlakshman/profileio)\n\n* [Documentation](https://acrlakshman.github.com/profileio)\n* Highlights:\n  * Generate website from YAML based profile\n  * Generate r&eacute;sum&eacute; with different themes\n  * Schema used in YAML documents extends the schema from [JSON Resume](https://jsonresume.org)\n  * `gh-pages` branch is generated via github actions\n  * Branch `deployment_platforms` pushed by github actions can be used as production branch to deploy with netlify\n\n---\n\n## Run locally\n\n```sh\ngit clone https://github.com/acrlakshman/profileio\n\ncd profileio\nyarn && yarn start\n```\n\n---\n\n## [profileio-resume](https://github.com/acrlakshman/profileio-resume)\n\n```go\npackage main\n\nimport (\n\t\"io/ioutil\"\n\t\"log\"\n\t\"os\"\n\t\"os/exec\"\n\n\t\"github.com/acrlakshman/profileio-resume/profileio\"\n)\n\nfunc main() {\n\tjsonData, _ := ioutil.ReadFile(\"./profile_resume.json\")\n\tprofileio.ProfileIO(jsonData)\n\n\tapp := \"xelatex\"\n\tif !commandExists(app) {\n\t\tapp = \"pdflatex\"\n\t\tif !commandExists(app) {\n\t\t\tlog.Print(\"Cannot compile resume.tex\")\n\t\t\tos.Exit(0)\n\t\t}\n\t}\n\n\tos.Chdir(\"./resume\")\n\tcmd := exec.Command(app, \"resume.tex\")\n\t_, err := cmd.Output()\n\tif err != nil {\n\t\tlog.Printf(\"%v\", err)\n\t}\n}\n\nfunc commandExists(cmd string) bool {\n\t_, err := exec.LookPath(cmd)\n\n\treturn err == nil\n}\n```"
           }
         },
         "render": true
@@ -318,7 +307,7 @@
         "value": {
           "type": "book",
           "author": "Author I, Author II, and Author III",
-          "title": "Sample title of a book made-up to give demo for profileio",
+          "title": "Sample title I of a book made-up to give demo for profileio",
           "series": "Encyclopedia of Two-Phase Heat Transfer and Flow",
           "volume": 3,
           "publisher": "World Scientific",
@@ -333,7 +322,7 @@
         "value": {
           "type": "article",
           "author": "Author I, Author II, and Author III",
-          "title": "Sample title of an article made-up to give demo for profileio",
+          "title": "Sample title II of an article made-up to give demo for profileio",
           "journal": "Journal of Computational Physics",
           "volume": 334,
           "year": 2017,
@@ -348,7 +337,7 @@
         "value": {
           "type": "article",
           "author": "Author I, Author II, and Author III",
-          "title": "Sample title of an article made-up to give demo for profileio",
+          "title": "Sample title III of an article made-up to give demo for profileio",
           "journal": "International Journal of Heat and Fluid Flow",
           "volume": 44,
           "year": 2013,
@@ -363,7 +352,7 @@
         "value": {
           "type": "article",
           "author": "Author I and Author II",
-          "title": "Sample title of an article made-up to give demo for profileio",
+          "title": "Sample title IV of an article made-up to give demo for profileio",
           "journal": "International Journal of Numerical Methods in Fluids",
           "volume": 73,
           "year": 2013,
@@ -378,7 +367,7 @@
         "value": {
           "type": "article",
           "author": "Author I, Author II, and Author III",
-          "title": "Sample title of an article made-up to give demo for profileio",
+          "title": "Sample title V of an article made-up to give demo for profileio",
           "journal": "Computational Science & Discovery",
           "volume": 5,
           "year": 2012,
@@ -508,7 +497,7 @@
           "email": "user@domain.edu",
           "url": "https://github.com/acrlakshman/profileio"
         },
-        "render": true
+        "render": false
       }
     ]
   },
@@ -521,13 +510,14 @@
         {
           "value": {
             "brief": "Physics based simulations:",
-            "detail": "Level set method I for artistic simulations (9999999998). Level set method II for artistic simulations (9999999999)."
+            "detail": "Level set method I for artistic simulations (9999998). Level set method II for artistic simulations (9999999)."
           },
           "render": true
         },
         {
           "value": {
-            "detail": "Experimental Physics: Inventing so and so method for so and so (9999999997)"
+            "brief": "Experimental physics:",
+            "detail": "Novel PIV method to quatify velocity of fluid flow through swirl atomizer (9999997)"
           },
           "render": true
         }
