@@ -41,7 +41,7 @@ func main() {
 	// folder "resume" in the current directory.
 	os.Chdir("./resume")
 	cmd := exec.Command(app, "resume.tex")
-	out, err := cmd.Output()
+	_, err := cmd.Output()
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -54,5 +54,5 @@ func commandExists(cmd string) bool {
 }
 ```
 
-[ProfileIO]: https://github.com/acrlakshman/profileio
+[profileio]: https://github.com/acrlakshman/profileio
 [profileio-resume]: https://github.com/acrlakshman/profileio-resume

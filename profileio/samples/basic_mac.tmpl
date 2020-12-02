@@ -38,7 +38,7 @@
 	{{range $index, $item := .Work.List}}{{if $item.Render}}
 	%~~~~~~~~~~~~~~~~~~~~~~~~~~ Experience {{ $index }} ~~~~~~~~~~~~~~~~~~~~~~~~~~%
 	{\bf {{$item.Value.Position -}} } \hfill {{if or $item.Value.StartDate $item.Value.EndDate}}{\it {{$item.Value.StartDate}}{{if and $item.Value.StartDate $item.Value.EndDate}} - {{end}}{{$item.Value.EndDate -}} }{{end}} \\
-	{\it {{$item.Value.Name}}{{if $item.Value.Location}}, {{$item.Value.Location}}{{end -}} }
+	{\it {{ SanitizeText $item.Value.Name }}{{if $item.Value.Location}}, {{$item.Value.Location}}{{end -}} }
 	\begin{itemize}[leftmargin=*]
 	\setlength{\itemsep}{0mm} \smallskip
 	{{range $i, $subItem := $item.Value.Highlights}}{{if $subItem}}
@@ -121,7 +121,7 @@
 	%~~~~~~~~~~~~~~~~~~~~~~~~~~ Education {{ $index }} ~~~~~~~~~~~~~~~~~~~~~~~~~~%
 	\begin{itemize}[leftmargin=0pt]
 	\setlength{\itemsep}{0mm} \smallskip
-		\item[] { {{- $item.Value.Institution}}, \hfill {{if or $item.Value.StartDate $item.Value.EndDate}}{\it {{$item.Value.StartDate}}{{if and $item.Value.StartDate $item.Value.EndDate}} - {{end}}{{$item.Value.EndDate -}} }{{end -}} }
+		\item[] { {{- SanitizeText $item.Value.Institution}}, \hfill {{if or $item.Value.StartDate $item.Value.EndDate}}{\it {{$item.Value.StartDate}}{{if and $item.Value.StartDate $item.Value.EndDate}} - {{end}}{{$item.Value.EndDate -}} }{{end -}} }
 		\item[] {\it {{$item.Value.Degree}} {{$item.Value.Major}}{{if $item.Value.Minor}}, {{$item.Value.Minor}} (minor){{end}} \hfill {{if or $item.Value.Grade $item.Value.GradeTotal}}GPA: {{ParseGrade $item.Value.Grade}}{{if and $item.Value.Grade $item.Value.GradeTotal}}/{{end}}{{$item.Value.GradeTotal}}{{end -}} }
 	\end{itemize}
 	{{end}}{{end}}
