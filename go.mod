@@ -1,5 +1,5 @@
 module github.com/acrlakshman/profileio-resume
 
-go 1.14
+go 1.16
 
-require github.com/buger/jsonparser v1.0.0
+require github.com/buger/jsonparser v1.1.1
